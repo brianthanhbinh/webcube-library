@@ -1,0 +1,83 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml Data_Version = "2" >
+
+    <Interface>
+        <Name>Megaminx 8x8</Name>
+        <Menu>Dodecahedral\Megaminx 8x8</Menu>
+        <Added>2026-11-24</Added>
+    </Interface>
+
+    <Axes TurningAngles = "2 * Pi / 5" PlaneDistances = "-0.622475; -0.556758; -0.491042; 0.000000; 0.491042; 0.556758; 0.622475" >
+        <Axis NormVector = "0.000000000; 0.850650808; 0.525731112" />
+        <Axis NormVector = "0.000000000; 0.850650808; -0.525731112" />
+        <Axis NormVector = "0.525731112; 0.000000000; 0.850650808" />
+        <Axis NormVector = "-0.525731112; 0.000000000; 0.850650808" />
+        <Axis NormVector = "0.850650808; 0.525731112; 0.000000000" />
+        <Axis NormVector = "0.850650808; -0.525731112; 0.000000000" />
+    </Axes>
+
+    <Figure>
+        <LoadFrom File = "Figures\Dodecahedron.xml" W = "0.5" />
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <!-- Macros turn the outer layer of each face. Layers per axis: 0..7 (outer = 0 and 7) -->
+    <Macros>
+        <Macro Name = "A " Public = "1" Description = "A - face A clockwise, A' - counter-clockwise, A2 - two steps" > <Turn Axis = "0" Layer = "7" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "A'" Public = "0" > <Turn Axis = "0" Layer = "7" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "A2" Public = "0" > <Turn Axis = "0" Layer = "7" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "A2'" Public = "0" > <Turn Axis = "0" Layer = "7" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "B " Public = "1" Description = "B - face B clockwise, B' - counter-clockwise, B2 - two steps" > <Turn Axis = "1" Layer = "7" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "B'" Public = "0" > <Turn Axis = "1" Layer = "7" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "B2" Public = "0" > <Turn Axis = "1" Layer = "7" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "B2'" Public = "0" > <Turn Axis = "1" Layer = "7" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "C " Public = "1" Description = "C - face C clockwise, C' - counter-clockwise, C2 - two steps" > <Turn Axis = "2" Layer = "7" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "C'" Public = "0" > <Turn Axis = "2" Layer = "7" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "C2" Public = "0" > <Turn Axis = "2" Layer = "7" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "C2'" Public = "0" > <Turn Axis = "2" Layer = "7" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "D " Public = "1" Description = "D - face D clockwise, D' - counter-clockwise, D2 - two steps" > <Turn Axis = "3" Layer = "7" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "D'" Public = "0" > <Turn Axis = "3" Layer = "7" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "D2" Public = "0" > <Turn Axis = "3" Layer = "7" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "D2'" Public = "0" > <Turn Axis = "3" Layer = "7" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "E " Public = "1" Description = "E - face E clockwise, E' - counter-clockwise, E2 - two steps" > <Turn Axis = "4" Layer = "7" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "E'" Public = "0" > <Turn Axis = "4" Layer = "7" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "E2" Public = "0" > <Turn Axis = "4" Layer = "7" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "E2'" Public = "0" > <Turn Axis = "4" Layer = "7" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "F " Public = "1" Description = "F - face F clockwise, F' - counter-clockwise, F2 - two steps" > <Turn Axis = "5" Layer = "7" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "F'" Public = "0" > <Turn Axis = "5" Layer = "7" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "F2" Public = "0" > <Turn Axis = "5" Layer = "7" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "F2'" Public = "0" > <Turn Axis = "5" Layer = "7" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "G " Public = "1" Description = "G - face G clockwise, G' - counter-clockwise, G2 - two steps" > <Turn Axis = "0" Layer = "0" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "G'" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "G2" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "G2'" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "H " Public = "1" Description = "H - face H clockwise, H' - counter-clockwise, H2 - two steps" > <Turn Axis = "1" Layer = "0" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "H'" Public = "0" > <Turn Axis = "1" Layer = "0" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "H2" Public = "0" > <Turn Axis = "1" Layer = "0" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "H2'" Public = "0" > <Turn Axis = "1" Layer = "0" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "I " Public = "1" Description = "I - face I clockwise, I' - counter-clockwise, I2 - two steps" > <Turn Axis = "2" Layer = "0" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "I'" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "I2" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "I2'" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "J " Public = "1" Description = "J - face J clockwise, J' - counter-clockwise, J2 - two steps" > <Turn Axis = "3" Layer = "0" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "J'" Public = "0" > <Turn Axis = "3" Layer = "0" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "J2" Public = "0" > <Turn Axis = "3" Layer = "0" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "J2'" Public = "0" > <Turn Axis = "3" Layer = "0" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "K " Public = "1" Description = "K - face K clockwise, K' - counter-clockwise, K2 - two steps" > <Turn Axis = "4" Layer = "0" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "K'" Public = "0" > <Turn Axis = "4" Layer = "0" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "K2" Public = "0" > <Turn Axis = "4" Layer = "0" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "K2'" Public = "0" > <Turn Axis = "4" Layer = "0" Angle = "-2*2*Pi/5" /> </Macro>
+        <Macro Name = "L " Public = "1" Description = "L - face L clockwise, L' - counter-clockwise, L2 - two steps" > <Turn Axis = "5" Layer = "0" Angle = "1*2*Pi/5" /> </Macro>
+        <Macro Name = "L'" Public = "0" > <Turn Axis = "5" Layer = "0" Angle = "-1*2*Pi/5" /> </Macro>
+        <Macro Name = "L2" Public = "0" > <Turn Axis = "5" Layer = "0" Angle = "2*2*Pi/5" /> </Macro>
+        <Macro Name = "L2'" Public = "0" > <Turn Axis = "5" Layer = "0" Angle = "-2*2*Pi/5" /> </Macro>
+
+        <Macro Name = "RandomTurn" >
+            <Turn Axis = "Random(6)" Layer = "Random(8)" Angle = "2 * Pi / 5 * (Random(4) + 1)" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Replacing of standard scrambling" Sequence = "240 random turns" >
+            <ExecMacro MacroName = "RandomTurn" Repeat = "240" />
+        </Macro>
+    </Macros>
+</xml>
