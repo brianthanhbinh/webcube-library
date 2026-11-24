@@ -1,0 +1,56 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml Data_Version = "2" >
+
+    <Interface>
+        <Name>13x13x13 Cube</Name>
+        <Menu>Cubic\Custom\13x13x13</Menu>
+        <Inventor>Uwe Mertens</Inventor>
+        <Programmer>Brian</Programmer>
+        <Added>2026-03-21</Added>
+    </Interface>
+ 
+    <Axes TurningAngles = "Pi / 2" PlaneDistances = "-11/26; -9/26; -7/26; -5/26; -3/26; -1/26; 1/26; 3/26; 5/26; 7/26; 9/26; 11/26" >
+        <Axis NormVector = "1; 0; 0" />
+        <Axis NormVector = "0; 1; 0" />
+        <Axis NormVector = "0; 0; 1" />
+    </Axes>
+ 
+    <Figure>
+        <LoadFrom File = "Figures\Cube.xml" W = "0.5" />
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <!-- Left / Right Layers -->
+        <Macro Name = "L " Public = "1" Description = "L - left layer"> <Turn Axis = "0" Layer = "0" Angle = " Pi/2" /> </Macro>
+        <Macro Name = "L2" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = " Pi  " /> </Macro>
+        <Macro Name = "L'" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "R " Public = "1" Description = "R - right layer"> <Turn Axis = "0" Layer = "12" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "R2" Public = "0" > <Turn Axis = "0" Layer = "12" Angle = " Pi  " /> </Macro>
+        <Macro Name = "R'" Public = "0" > <Turn Axis = "0" Layer = "12" Angle = " Pi/2" /> </Macro>
+
+        <!-- Front / Back Layers -->
+        <Macro Name = "F " Public = "1" Description = "F - front layer"> <Turn Axis = "1" Layer = "0" Angle = " Pi/2" /> </Macro>
+        <Macro Name = "F2" Public = "0" > <Turn Axis = "1" Layer = "0" Angle = " Pi  " /> </Macro>
+        <Macro Name = "F'" Public = "0" > <Turn Axis = "1" Layer = "0" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "B " Public = "1" Description = "B - back layer"> <Turn Axis = "1" Layer = "12" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "B2" Public = "0" > <Turn Axis = "1" Layer = "12" Angle = " Pi  " /> </Macro>
+        <Macro Name = "B'" Public = "0" > <Turn Axis = "1" Layer = "12" Angle = " Pi/2" /> </Macro>
+
+        <!-- Down / Up Layers -->
+        <Macro Name = "D " Public = "1" Description = "D - down layer"> <Turn Axis = "2" Layer = "0" Angle = " Pi/2" /> </Macro>
+        <Macro Name = "D2" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = " Pi  " /> </Macro>
+        <Macro Name = "D'" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "U " Public = "1" Description = "U - up layer"> <Turn Axis = "2" Layer = "12" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "U2" Public = "0" > <Turn Axis = "2" Layer = "12" Angle = " Pi  " /> </Macro>
+        <Macro Name = "U'" Public = "0" > <Turn Axis = "2" Layer = "12" Angle = " Pi/2" /> </Macro>
+
+        <Macro Name = "RandomTurn" >
+            <Turn Axis = "Random(3)" Layer = "Random(13)" Angle = "Pi/2 * (Random(3) + 1)" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Scramble 13x13" Sequence = "100 random turns" >
+            <ExecMacro MacroName = "RandomTurn" Repeat = "100" />
+        </Macro>
+    </Macros>
+</xml>
