@@ -32,7 +32,7 @@ import gen_megaminx_figure as fig
 
 # ---------------------------------------------------------------- settings
 W = 0.5                       # same W you pass to <LoadFrom>; 0.5 matches Cube.xml
-FIGURE_FILE = "Figures\\megaminx_figure.xml"
+FIGURE_FILE = "Figures\\Dodecahedron.xml"
 MENU_FOLDER = "Dodecahedral"
 PROGRAMMER = ""               # put your name here (omitted when empty)
 FACE_NAMES = "ABCDEFGHIJKL"   # macro letters; edit if you prefer other names
@@ -128,10 +128,15 @@ def write(n):
     os.makedirs(os.path.join(HERE, "Figures"), exist_ok=True)
     figures_dir = os.path.join(HERE, "Figures")
     os.makedirs(figures_dir, exist_ok=True)
-    # Use the exact twelve-colour reference figure for every generated
-    # Megaminx-family puzzle. Keep Dodecahedron.xml for older puzzle files.
-    fig.write(os.path.join(figures_dir, "megaminx_figure.xml"))
-    fig.write(os.path.join(figures_dir, "Dodecahedron.xml"))
+    # Prefer the exact uploaded reference figure, using the conventional
+    # filename expected by existing puzzle files and loaders.
+    reference = os.path.join(HERE, "..", "figures", "Dodecahedron.xml")
+    if os.path.isfile(reference):
+        import shutil
+        shutil.copyfile(reference, os.path.join(figures_dir, "Dodecahedron.xml"))
+    else:
+        # Fallback for standalone copies of this generator without the library.
+        fig.write(os.path.join(figures_dir, "Dodecahedron.xml"))
     name, text, ds = make_xml(n)
     path = os.path.join(HERE, f"{name}.xml")
     with open(path, "w", encoding="utf-8") as fh:
