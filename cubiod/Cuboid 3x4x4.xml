@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml Data_Version = "2" >
+
+    <Interface>
+        <Name>Cuboid 3x4x4</Name>
+        <Menu>Cubic\Cuboids\Cuboid 3x4x4</Menu>
+        <Added>2026-11-21</Added>
+    </Interface>
+
+    <Axes TurningAngles = "Pi / 2" PlaneDistances = "-1/6; 1/6" >
+        <Axis NormVector = "1; 0; 0" />
+    </Axes>
+
+    <Axes TurningAngles = "Pi" PlaneDistances = "-2/6; 0; 2/6" >
+        <Axis NormVector = "0; 1; 0" />
+        <Axis NormVector = "0; 0; 1" />
+    </Axes>
+
+    <Figure>
+        <LoadFrom File = "Figures\Cuboid.xml" Wx = "0.500000" Wy = "0.666667" Wz = "0.666667" />
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <Macro Name = "L " Public = "1" Description = "L - first layer of direction x clockwise, L2 - double, L' - counter-clockwise" > <Turn Axis = "0" Layer = "0" Angle = "Pi/2" /> </Macro>
+        <Macro Name = "L2" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "L'" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "R " Public = "1" Description = "R - last layer of direction x clockwise, R2 - double, R' - counter-clockwise" > <Turn Axis = "0" Layer = "2" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "R2" Public = "0" > <Turn Axis = "0" Layer = "2" Angle = "Pi" /> </Macro>
+        <Macro Name = "R'" Public = "0" > <Turn Axis = "0" Layer = "2" Angle = "Pi/2" /> </Macro>
+        <Macro Name = "F2" Public = "1" Description = "F2 - half turn of the first layer of direction y" > <Turn Axis = "1" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "B2" Public = "1" Description = "B2 - half turn of the last layer of direction y" > <Turn Axis = "1" Layer = "3" Angle = "Pi" /> </Macro>
+        <Macro Name = "D2" Public = "1" Description = "D2 - half turn of the first layer of direction z" > <Turn Axis = "2" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "U2" Public = "1" Description = "U2 - half turn of the last layer of direction z" > <Turn Axis = "2" Layer = "3" Angle = "Pi" /> </Macro>
+
+        <Macro Name = "RandomRound" >
+            <Turn Axis = "0" Layer = "Random(3)" Angle = "Pi/2 * (Random(3) + 1)" />
+            <Turn Axis = "1" Layer = "Random(4)" Angle = "Pi" />
+            <Turn Axis = "2" Layer = "Random(4)" Angle = "Pi" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Replacing of standard scrambling" Sequence = "110 random turns" >
+            <ExecMacro MacroName = "RandomRound" Repeat = "36" />
+        </Macro>
+    </Macros>
+</xml>

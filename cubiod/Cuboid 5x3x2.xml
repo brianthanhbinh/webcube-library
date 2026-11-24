@@ -1,0 +1,45 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml Data_Version = "2" >
+
+    <Interface>
+        <Name>Cuboid 5x3x2</Name>
+        <Menu>Cubic\Cuboids\Cuboid 5x3x2</Menu>
+        <Added>2026-11-21</Added>
+    </Interface>
+
+    <Axes TurningAngles = "Pi" PlaneDistances = "-3/6; -1/6; 1/6; 3/6" >
+        <Axis NormVector = "1; 0; 0" />
+    </Axes>
+
+    <Axes TurningAngles = "Pi" PlaneDistances = "-1/6; 1/6" >
+        <Axis NormVector = "0; 1; 0" />
+    </Axes>
+
+    <Axes TurningAngles = "Pi" PlaneDistances = "0" >
+        <Axis NormVector = "0; 0; 1" />
+    </Axes>
+
+    <Figure>
+        <LoadFrom File = "Figures\Cuboid.xml" Wx = "0.833333" Wy = "0.500000" Wz = "0.333333" />
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <Macro Name = "L2" Public = "1" Description = "L2 - half turn of the first layer of direction x" > <Turn Axis = "0" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "R2" Public = "1" Description = "R2 - half turn of the last layer of direction x" > <Turn Axis = "0" Layer = "4" Angle = "Pi" /> </Macro>
+        <Macro Name = "F2" Public = "1" Description = "F2 - half turn of the first layer of direction y" > <Turn Axis = "1" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "B2" Public = "1" Description = "B2 - half turn of the last layer of direction y" > <Turn Axis = "1" Layer = "2" Angle = "Pi" /> </Macro>
+        <Macro Name = "D2" Public = "1" Description = "D2 - half turn of the first layer of direction z" > <Turn Axis = "2" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "U2" Public = "1" Description = "U2 - half turn of the last layer of direction z" > <Turn Axis = "2" Layer = "1" Angle = "Pi" /> </Macro>
+
+        <Macro Name = "RandomRound" >
+            <Turn Axis = "0" Layer = "Random(5)" Angle = "Pi" />
+            <Turn Axis = "1" Layer = "Random(3)" Angle = "Pi" />
+            <Turn Axis = "2" Layer = "Random(2)" Angle = "Pi" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Replacing of standard scrambling" Sequence = "100 random turns" >
+            <ExecMacro MacroName = "RandomRound" Repeat = "33" />
+        </Macro>
+    </Macros>
+</xml>
