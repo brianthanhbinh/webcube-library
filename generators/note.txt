@@ -1,0 +1,1 @@
+use generator here. you can make any cube with it. its python so go get python
