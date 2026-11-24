@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml Data_Version="2">
+
+    <Interface>
+        <Name>Pyraminx 9x9</Name>
+        <Menu>Tetrahedron\Pyraminx\9x9</Menu>
+        <Inventor>Uwe Meffert</Inventor>
+        <Programmer>Brian</Programmer>
+        <Added>2026-11-19</Added>
+    </Interface>
+
+    <Axes
+        TurningAngles="2*Pi/3"
+        PlaneDistances="0.1; 0.1686; 0.2371; 0.3057; 0.3743; 0.4429; 0.5114; 0.58">
+
+        <Axis NormVector="1;1;1"/>
+        <Axis NormVector="-1;-1;1"/>
+        <Axis NormVector="-1;1;-1"/>
+        <Axis NormVector="1;-1;-1"/>
+
+    </Axes>
+
+    <Figure>
+        <LoadFrom File="Figures\Tetrahedron.xml" W="0.5"/>
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <!-- Face Turns -->
+        <Macro Name = "U " Public = "1" Description = "U face turn"> <Turn Axis = "0" Layer = "8" Angle = "2*Pi/3" /> </Macro>
+        <Macro Name = "U'" Public = "0" > <Turn Axis = "0" Layer = "8" Angle = "-2*Pi/3" /> </Macro>
+        <Macro Name = "L " Public = "1" Description = "L face turn"> <Turn Axis = "1" Layer = "8" Angle = "2*Pi/3" /> </Macro>
+        <Macro Name = "L'" Public = "0" > <Turn Axis = "1" Layer = "8" Angle = "-2*Pi/3" /> </Macro>
+        <Macro Name = "R " Public = "1" Description = "R face turn"> <Turn Axis = "2" Layer = "8" Angle = "2*Pi/3" /> </Macro>
+        <Macro Name = "R'" Public = "0" > <Turn Axis = "2" Layer = "8" Angle = "-2*Pi/3" /> </Macro>
+        <Macro Name = "B " Public = "1" Description = "B face turn"> <Turn Axis = "3" Layer = "8" Angle = "2*Pi/3" /> </Macro>
+        <Macro Name = "B'" Public = "0" > <Turn Axis = "3" Layer = "8" Angle = "-2*Pi/3" /> </Macro>
+
+        <Macro Name = "RandomTurn" >
+            <Turn Axis = "Random(4)" Layer = "Random(9)" Angle = "2*Pi/3 * (Random(2) + 1)" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Scramble Pyraminx 9x9" Sequence = "50 random turns" >
+            <ExecMacro MacroName = "RandomTurn" Repeat = "50" />
+        </Macro>
+    </Macros>
+</xml>
