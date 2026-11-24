@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml Data_Version="2">
+
+    <Interface>
+        <Name>Mirror Cube 3x3x3</Name>
+        <Menu>Cubic\Mirror\3x3x3</Menu>
+        <Inventor>Hidetoshi Takeji</Inventor>
+        <Programmer>Brian</Programmer>
+        <Added>2026-11-24</Added>
+    </Interface>
+
+    <Axes
+        TurningAngles="2*Pi/4"
+        PlaneDistances="-0.166667; 0.166667">
+
+        <Axis NormVector="1;0;0"/>
+        <Axis NormVector="0;1;0"/>
+        <Axis NormVector="0;0;1"/>
+
+    </Axes>
+
+    <Figure>
+        <LoadFrom File="Figures\Mirror.xml" W="0.5"/>
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <Macro Name = "R " Public = "1" Description = "R face turn"> <Turn Axis = "0" Layer = "2" Angle = "2*Pi/4" /> </Macro>
+        <Macro Name = "R'" Public = "0"> <Turn Axis = "0" Layer = "2" Angle = "-2*Pi/4" /> </Macro>
+        <Macro Name = "L " Public = "1" Description = "L face turn"> <Turn Axis = "0" Layer = "0" Angle = "-2*Pi/4" /> </Macro>
+        <Macro Name = "L'" Public = "0"> <Turn Axis = "0" Layer = "0" Angle = "2*Pi/4" /> </Macro>
+        <Macro Name = "U " Public = "1" Description = "U face turn"> <Turn Axis = "1" Layer = "2" Angle = "2*Pi/4" /> </Macro>
+        <Macro Name = "U'" Public = "0"> <Turn Axis = "1" Layer = "2" Angle = "-2*Pi/4" /> </Macro>
+        <Macro Name = "D " Public = "1" Description = "D face turn"> <Turn Axis = "1" Layer = "0" Angle = "-2*Pi/4" /> </Macro>
+        <Macro Name = "D'" Public = "0"> <Turn Axis = "1" Layer = "0" Angle = "2*Pi/4" /> </Macro>
+        <Macro Name = "F " Public = "1" Description = "F face turn"> <Turn Axis = "2" Layer = "2" Angle = "2*Pi/4" /> </Macro>
+        <Macro Name = "F'" Public = "0"> <Turn Axis = "2" Layer = "2" Angle = "-2*Pi/4" /> </Macro>
+        <Macro Name = "B " Public = "1" Description = "B face turn"> <Turn Axis = "2" Layer = "0" Angle = "-2*Pi/4" /> </Macro>
+        <Macro Name = "B'" Public = "0"> <Turn Axis = "2" Layer = "0" Angle = "2*Pi/4" /> </Macro>
+
+        <Macro Name = "RandomTurn" >
+            <Turn Axis = "Random(3)" Layer = "Random(3)" Angle = "2*Pi/4 * (Random(3) + 1)" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Scramble Mirror 3x3x3" Sequence = "45 random turns" >
+            <ExecMacro MacroName = "RandomTurn" Repeat = "45" />
+        </Macro>
+    </Macros>
+</xml>
