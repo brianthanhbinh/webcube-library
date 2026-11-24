@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml Data_Version = "2" >
+
+    <Interface>
+        <Name>Cylinder 1x1x2</Name>
+        <Menu>Cubic\Cylinders\Cylinder 1x1x2</Menu>
+        <Added>2026-11-21</Added>
+    </Interface>
+
+    <Axes TurningAngles = "Pi / 2" PlaneDistances = "0" >
+        <Axis NormVector = "0; 0; 1" />
+    </Axes>
+
+    <Figure>
+        <LoadFrom File = "Figures\Cylinder.xml" Wr = "0.166667" Wh = "0.333333" />
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <Macro Name = "D " Public = "1" Description = "D - first layer along the height clockwise, D2 - double, D' - counter-clockwise" > <Turn Axis = "0" Layer = "0" Angle = "Pi/2" /> </Macro>
+        <Macro Name = "D2" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "D'" Public = "0" > <Turn Axis = "0" Layer = "0" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "U " Public = "1" Description = "U - last layer along the height clockwise, U2 - double, U' - counter-clockwise" > <Turn Axis = "0" Layer = "1" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "U2" Public = "0" > <Turn Axis = "0" Layer = "1" Angle = "Pi" /> </Macro>
+        <Macro Name = "U'" Public = "0" > <Turn Axis = "0" Layer = "1" Angle = "Pi/2" /> </Macro>
+
+        <Macro Name = "RandomTurn" >
+            <Turn Axis = "Random(1)" Layer = "Random(2)" Angle = "Pi/2 * (Random(3) + 1)" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Replacing of standard scrambling" Sequence = "100 random turns" >
+            <ExecMacro MacroName = "RandomTurn" Repeat = "100" />
+        </Macro>
+    </Macros>
+</xml>

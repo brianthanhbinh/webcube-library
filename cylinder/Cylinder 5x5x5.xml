@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml Data_Version = "2" >
+
+    <Interface>
+        <Name>Cylinder 5x5x5</Name>
+        <Menu>Cubic\Cylinders\Cylinder 5x5x5</Menu>
+        <Added>2026-11-24</Added>
+    </Interface>
+
+    <Axes TurningAngles = "Pi" PlaneDistances = "-3/6; -1/6; 1/6; 3/6" >
+        <Axis NormVector = "1; 0; 0" />
+        <Axis NormVector = "0; 1; 0" />
+    </Axes>
+
+    <Axes TurningAngles = "Pi / 2" PlaneDistances = "-3/6; -1/6; 1/6; 3/6" >
+        <Axis NormVector = "0; 0; 1" />
+    </Axes>
+
+    <Figure>
+        <LoadFrom File = "Figures\Cylinder.xml" Wr = "0.833333" Wh = "0.833333" />
+        <SplitByAxes/>
+        <RemoveGrayParts/>
+    </Figure>
+
+    <Macros>
+        <Macro Name = "L2" Public = "1" Description = "L2 - half turn of the first layer across the circle" > <Turn Axis = "0" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "R2" Public = "1" Description = "R2 - half turn of the last layer across the circle" > <Turn Axis = "0" Layer = "4" Angle = "Pi" /> </Macro>
+        <Macro Name = "F2" Public = "1" Description = "F2 - half turn of the first layer across the circle" > <Turn Axis = "1" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "B2" Public = "1" Description = "B2 - half turn of the last layer across the circle" > <Turn Axis = "1" Layer = "4" Angle = "Pi" /> </Macro>
+        <Macro Name = "D " Public = "1" Description = "D - first layer along the height clockwise, D2 - double, D' - counter-clockwise" > <Turn Axis = "2" Layer = "0" Angle = "Pi/2" /> </Macro>
+        <Macro Name = "D2" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = "Pi" /> </Macro>
+        <Macro Name = "D'" Public = "0" > <Turn Axis = "2" Layer = "0" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "U " Public = "1" Description = "U - last layer along the height clockwise, U2 - double, U' - counter-clockwise" > <Turn Axis = "2" Layer = "4" Angle = "-Pi/2" /> </Macro>
+        <Macro Name = "U2" Public = "0" > <Turn Axis = "2" Layer = "4" Angle = "Pi" /> </Macro>
+        <Macro Name = "U'" Public = "0" > <Turn Axis = "2" Layer = "4" Angle = "Pi/2" /> </Macro>
+
+        <Macro Name = "RandomRound" >
+            <Turn Axis = "0" Layer = "Random(5)" Angle = "Pi" />
+            <Turn Axis = "1" Layer = "Random(5)" Angle = "Pi" />
+            <Turn Axis = "2" Layer = "Random(5)" Angle = "Pi/2 * (Random(3) + 1)" />
+        </Macro>
+        <Macro Name = "Scramble" Public = "1" Description = "Replacing of standard scrambling" Sequence = "150 random turns" >
+            <ExecMacro MacroName = "RandomRound" Repeat = "50" />
+        </Macro>
+    </Macros>
+</xml>
