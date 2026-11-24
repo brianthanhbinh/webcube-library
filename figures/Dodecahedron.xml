@@ -1,0 +1,59 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml>
+    <Script>
+        if not VarExists('Colors[0]') then begin
+            Colors[0] := 'FFFFFF';
+            Colors[1] := 'C80000';
+            Colors[2] := '0000C8';
+            Colors[3] := '800080';
+            Colors[4] := 'FF96C8';
+            Colors[5] := '00C8C8';
+            Colors[6] := 'FFFF00';
+            Colors[7] := 'FF8000';
+            Colors[8] := '009600';
+            Colors[9] := '80FF00';
+            Colors[10] := 'D2B48C';
+            Colors[11] := '8B4513';
+        end;
+
+        Vx[0] := W; Vy[0] := W; Vz[0] := W;
+        Vx[1] := W; Vy[1] := W; Vz[1] := -W;
+        Vx[2] := W; Vy[2] := -W; Vz[2] := W;
+        Vx[3] := W; Vy[3] := -W; Vz[3] := -W;
+        Vx[4] := -W; Vy[4] := W; Vz[4] := W;
+        Vx[5] := -W; Vy[5] := W; Vz[5] := -W;
+        Vx[6] := -W; Vy[6] := -W; Vz[6] := W;
+        Vx[7] := -W; Vy[7] := -W; Vz[7] := -W;
+        Vx[8] := 0; Vy[8] := 0.618033989 * W; Vz[8] := 1.618033989 * W;
+        Vx[9] := 0.618033989 * W; Vy[9] := 1.618033989 * W; Vz[9] := 0;
+        Vx[10] := 1.618033989 * W; Vy[10] := 0; Vz[10] := 0.618033989 * W;
+        Vx[11] := 0; Vy[11] := 0.618033989 * W; Vz[11] := -1.618033989 * W;
+        Vx[12] := 0.618033989 * W; Vy[12] := -1.618033989 * W; Vz[12] := 0;
+        Vx[13] := -1.618033989 * W; Vy[13] := 0; Vz[13] := 0.618033989 * W;
+        Vx[14] := 0; Vy[14] := -0.618033989 * W; Vz[14] := 1.618033989 * W;
+        Vx[15] := -0.618033989 * W; Vy[15] := 1.618033989 * W; Vz[15] := 0;
+        Vx[16] := 1.618033989 * W; Vy[16] := 0; Vz[16] := -0.618033989 * W;
+        Vx[17] := 0; Vy[17] := -0.618033989 * W; Vz[17] := -1.618033989 * W;
+        Vx[18] := -0.618033989 * W; Vy[18] := -1.618033989 * W; Vz[18] := 0;
+        Vx[19] := -1.618033989 * W; Vy[19] := 0; Vz[19] := -0.618033989 * W;
+    </Script>
+
+    <Part>
+        <Vertices Vectors = "Vx; Vy; Vz" />
+
+        <Faces>
+            <Face Color = "Colors[0]" VertexIndexes = "0;9;15;4;8" />
+            <Face Color = "Colors[1]" VertexIndexes = "9;1;11;5;15" />
+            <Face Color = "Colors[2]" VertexIndexes = "2;10;0;8;14" />
+            <Face Color = "Colors[3]" VertexIndexes = "14;8;4;13;6" />
+            <Face Color = "Colors[4]" VertexIndexes = "10;16;1;9;0" />
+            <Face Color = "Colors[5]" VertexIndexes = "16;10;2;12;3" />
+            <Face Color = "Colors[6]" VertexIndexes = "3;12;18;7;17" />
+            <Face Color = "Colors[7]" VertexIndexes = "12;2;14;6;18" />
+            <Face Color = "Colors[8]" VertexIndexes = "11;17;7;19;5" />
+            <Face Color = "Colors[9]" VertexIndexes = "1;16;3;17;11" />
+            <Face Color = "Colors[10]" VertexIndexes = "7;18;6;13;19" />
+            <Face Color = "Colors[11]" VertexIndexes = "4;15;5;19;13" />
+        </Faces>
+    </Part>
+</xml>
