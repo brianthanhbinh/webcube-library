@@ -1,0 +1,119 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xml>
+    <Script>
+        if not VarExists('Colors[0]') then begin
+            Colors[0] := 'C80000';
+            Colors[1] := '0000C8';
+            Colors[2] := 'FF8000';
+            Colors[3] := '009600';
+            Colors[4] := 'FFFFFF';
+            Colors[5] := 'FFFF00';
+        end;
+
+        Vx[0] := 0.707107 * Wr; Vy[0] := -0.707107 * Wr; Vz[0] := -Wh;
+        Vx[32] := 0.707107 * Wr; Vy[32] := -0.707107 * Wr; Vz[32] := Wh;
+        Vx[1] := 0.831470 * Wr; Vy[1] := -0.555570 * Wr; Vz[1] := -Wh;
+        Vx[33] := 0.831470 * Wr; Vy[33] := -0.555570 * Wr; Vz[33] := Wh;
+        Vx[2] := 0.923880 * Wr; Vy[2] := -0.382683 * Wr; Vz[2] := -Wh;
+        Vx[34] := 0.923880 * Wr; Vy[34] := -0.382683 * Wr; Vz[34] := Wh;
+        Vx[3] := 0.980785 * Wr; Vy[3] := -0.195090 * Wr; Vz[3] := -Wh;
+        Vx[35] := 0.980785 * Wr; Vy[35] := -0.195090 * Wr; Vz[35] := Wh;
+        Vx[4] := 1.000000 * Wr; Vy[4] := 0.000000 * Wr; Vz[4] := -Wh;
+        Vx[36] := 1.000000 * Wr; Vy[36] := 0.000000 * Wr; Vz[36] := Wh;
+        Vx[5] := 0.980785 * Wr; Vy[5] := 0.195090 * Wr; Vz[5] := -Wh;
+        Vx[37] := 0.980785 * Wr; Vy[37] := 0.195090 * Wr; Vz[37] := Wh;
+        Vx[6] := 0.923880 * Wr; Vy[6] := 0.382683 * Wr; Vz[6] := -Wh;
+        Vx[38] := 0.923880 * Wr; Vy[38] := 0.382683 * Wr; Vz[38] := Wh;
+        Vx[7] := 0.831470 * Wr; Vy[7] := 0.555570 * Wr; Vz[7] := -Wh;
+        Vx[39] := 0.831470 * Wr; Vy[39] := 0.555570 * Wr; Vz[39] := Wh;
+        Vx[8] := 0.707107 * Wr; Vy[8] := 0.707107 * Wr; Vz[8] := -Wh;
+        Vx[40] := 0.707107 * Wr; Vy[40] := 0.707107 * Wr; Vz[40] := Wh;
+        Vx[9] := 0.555570 * Wr; Vy[9] := 0.831470 * Wr; Vz[9] := -Wh;
+        Vx[41] := 0.555570 * Wr; Vy[41] := 0.831470 * Wr; Vz[41] := Wh;
+        Vx[10] := 0.382683 * Wr; Vy[10] := 0.923880 * Wr; Vz[10] := -Wh;
+        Vx[42] := 0.382683 * Wr; Vy[42] := 0.923880 * Wr; Vz[42] := Wh;
+        Vx[11] := 0.195090 * Wr; Vy[11] := 0.980785 * Wr; Vz[11] := -Wh;
+        Vx[43] := 0.195090 * Wr; Vy[43] := 0.980785 * Wr; Vz[43] := Wh;
+        Vx[12] := 0.000000 * Wr; Vy[12] := 1.000000 * Wr; Vz[12] := -Wh;
+        Vx[44] := 0.000000 * Wr; Vy[44] := 1.000000 * Wr; Vz[44] := Wh;
+        Vx[13] := -0.195090 * Wr; Vy[13] := 0.980785 * Wr; Vz[13] := -Wh;
+        Vx[45] := -0.195090 * Wr; Vy[45] := 0.980785 * Wr; Vz[45] := Wh;
+        Vx[14] := -0.382683 * Wr; Vy[14] := 0.923880 * Wr; Vz[14] := -Wh;
+        Vx[46] := -0.382683 * Wr; Vy[46] := 0.923880 * Wr; Vz[46] := Wh;
+        Vx[15] := -0.555570 * Wr; Vy[15] := 0.831470 * Wr; Vz[15] := -Wh;
+        Vx[47] := -0.555570 * Wr; Vy[47] := 0.831470 * Wr; Vz[47] := Wh;
+        Vx[16] := -0.707107 * Wr; Vy[16] := 0.707107 * Wr; Vz[16] := -Wh;
+        Vx[48] := -0.707107 * Wr; Vy[48] := 0.707107 * Wr; Vz[48] := Wh;
+        Vx[17] := -0.831470 * Wr; Vy[17] := 0.555570 * Wr; Vz[17] := -Wh;
+        Vx[49] := -0.831470 * Wr; Vy[49] := 0.555570 * Wr; Vz[49] := Wh;
+        Vx[18] := -0.923880 * Wr; Vy[18] := 0.382683 * Wr; Vz[18] := -Wh;
+        Vx[50] := -0.923880 * Wr; Vy[50] := 0.382683 * Wr; Vz[50] := Wh;
+        Vx[19] := -0.980785 * Wr; Vy[19] := 0.195090 * Wr; Vz[19] := -Wh;
+        Vx[51] := -0.980785 * Wr; Vy[51] := 0.195090 * Wr; Vz[51] := Wh;
+        Vx[20] := -1.000000 * Wr; Vy[20] := 0.000000 * Wr; Vz[20] := -Wh;
+        Vx[52] := -1.000000 * Wr; Vy[52] := 0.000000 * Wr; Vz[52] := Wh;
+        Vx[21] := -0.980785 * Wr; Vy[21] := -0.195090 * Wr; Vz[21] := -Wh;
+        Vx[53] := -0.980785 * Wr; Vy[53] := -0.195090 * Wr; Vz[53] := Wh;
+        Vx[22] := -0.923880 * Wr; Vy[22] := -0.382683 * Wr; Vz[22] := -Wh;
+        Vx[54] := -0.923880 * Wr; Vy[54] := -0.382683 * Wr; Vz[54] := Wh;
+        Vx[23] := -0.831470 * Wr; Vy[23] := -0.555570 * Wr; Vz[23] := -Wh;
+        Vx[55] := -0.831470 * Wr; Vy[55] := -0.555570 * Wr; Vz[55] := Wh;
+        Vx[24] := -0.707107 * Wr; Vy[24] := -0.707107 * Wr; Vz[24] := -Wh;
+        Vx[56] := -0.707107 * Wr; Vy[56] := -0.707107 * Wr; Vz[56] := Wh;
+        Vx[25] := -0.555570 * Wr; Vy[25] := -0.831470 * Wr; Vz[25] := -Wh;
+        Vx[57] := -0.555570 * Wr; Vy[57] := -0.831470 * Wr; Vz[57] := Wh;
+        Vx[26] := -0.382683 * Wr; Vy[26] := -0.923880 * Wr; Vz[26] := -Wh;
+        Vx[58] := -0.382683 * Wr; Vy[58] := -0.923880 * Wr; Vz[58] := Wh;
+        Vx[27] := -0.195090 * Wr; Vy[27] := -0.980785 * Wr; Vz[27] := -Wh;
+        Vx[59] := -0.195090 * Wr; Vy[59] := -0.980785 * Wr; Vz[59] := Wh;
+        Vx[28] := -0.000000 * Wr; Vy[28] := -1.000000 * Wr; Vz[28] := -Wh;
+        Vx[60] := -0.000000 * Wr; Vy[60] := -1.000000 * Wr; Vz[60] := Wh;
+        Vx[29] := 0.195090 * Wr; Vy[29] := -0.980785 * Wr; Vz[29] := -Wh;
+        Vx[61] := 0.195090 * Wr; Vy[61] := -0.980785 * Wr; Vz[61] := Wh;
+        Vx[30] := 0.382683 * Wr; Vy[30] := -0.923880 * Wr; Vz[30] := -Wh;
+        Vx[62] := 0.382683 * Wr; Vy[62] := -0.923880 * Wr; Vz[62] := Wh;
+        Vx[31] := 0.555570 * Wr; Vy[31] := -0.831470 * Wr; Vz[31] := -Wh;
+        Vx[63] := 0.555570 * Wr; Vy[63] := -0.831470 * Wr; Vz[63] := Wh;
+    </Script>
+
+    <Part>
+        <Vertices Vectors = "Vx; Vy; Vz" />
+
+        <Faces>
+            <Face Color = "Colors[0]" VertexIndexes = "0;1;33;32" />
+            <Face Color = "Colors[0]" VertexIndexes = "1;2;34;33" />
+            <Face Color = "Colors[0]" VertexIndexes = "2;3;35;34" />
+            <Face Color = "Colors[0]" VertexIndexes = "3;4;36;35" />
+            <Face Color = "Colors[0]" VertexIndexes = "4;5;37;36" />
+            <Face Color = "Colors[0]" VertexIndexes = "5;6;38;37" />
+            <Face Color = "Colors[0]" VertexIndexes = "6;7;39;38" />
+            <Face Color = "Colors[0]" VertexIndexes = "7;8;40;39" />
+            <Face Color = "Colors[1]" VertexIndexes = "8;9;41;40" />
+            <Face Color = "Colors[1]" VertexIndexes = "9;10;42;41" />
+            <Face Color = "Colors[1]" VertexIndexes = "10;11;43;42" />
+            <Face Color = "Colors[1]" VertexIndexes = "11;12;44;43" />
+            <Face Color = "Colors[1]" VertexIndexes = "12;13;45;44" />
+            <Face Color = "Colors[1]" VertexIndexes = "13;14;46;45" />
+            <Face Color = "Colors[1]" VertexIndexes = "14;15;47;46" />
+            <Face Color = "Colors[1]" VertexIndexes = "15;16;48;47" />
+            <Face Color = "Colors[2]" VertexIndexes = "16;17;49;48" />
+            <Face Color = "Colors[2]" VertexIndexes = "17;18;50;49" />
+            <Face Color = "Colors[2]" VertexIndexes = "18;19;51;50" />
+            <Face Color = "Colors[2]" VertexIndexes = "19;20;52;51" />
+            <Face Color = "Colors[2]" VertexIndexes = "20;21;53;52" />
+            <Face Color = "Colors[2]" VertexIndexes = "21;22;54;53" />
+            <Face Color = "Colors[2]" VertexIndexes = "22;23;55;54" />
+            <Face Color = "Colors[2]" VertexIndexes = "23;24;56;55" />
+            <Face Color = "Colors[3]" VertexIndexes = "24;25;57;56" />
+            <Face Color = "Colors[3]" VertexIndexes = "25;26;58;57" />
+            <Face Color = "Colors[3]" VertexIndexes = "26;27;59;58" />
+            <Face Color = "Colors[3]" VertexIndexes = "27;28;60;59" />
+            <Face Color = "Colors[3]" VertexIndexes = "28;29;61;60" />
+            <Face Color = "Colors[3]" VertexIndexes = "29;30;62;61" />
+            <Face Color = "Colors[3]" VertexIndexes = "30;31;63;62" />
+            <Face Color = "Colors[3]" VertexIndexes = "31;0;32;63" />
+            <Face Color = "Colors[4]" VertexIndexes = "32;33;34;35;36;37;38;39;40;41;42;43;44;45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63" />
+            <Face Color = "Colors[5]" VertexIndexes = "31;30;29;28;27;26;25;24;23;22;21;20;19;18;17;16;15;14;13;12;11;10;9;8;7;6;5;4;3;2;1;0" />
+        </Faces>
+    </Part>
+</xml>
